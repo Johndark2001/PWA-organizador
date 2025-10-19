@@ -40,13 +40,9 @@ export async function syncPendingData() {
           const session = JSON.parse(raw);
           if (session?.credential) headers["Authorization"] = `Bearer ${session.credential}`;
         }
-<<<<<<< HEAD
       } catch (err) {
+        // si falla leer la sesión, no detenemos la sincronización
         console.warn('Error leyendo session desde localStorage en syncService:', err);
-=======
-      } catch (e) {
-        // ignore
->>>>>>> 9690f33 (chore: normalize imports, unify auth token handling, fix jwt-decode import, Vite port and misc fixes)
       }
 
       const res = await fetch(endpoint, {

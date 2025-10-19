@@ -4,11 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-<<<<<<< HEAD
     "dev": "vite --port 5173",
-=======
-  "dev": "vite --port 5173",
->>>>>>> 9690f33 (chore: normalize imports, unify auth token handling, fix jwt-decode import, Vite port and misc fixes)
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
