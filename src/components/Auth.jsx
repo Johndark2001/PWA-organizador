@@ -75,11 +75,12 @@ const Auth = () => {
 
     // JSX: La estructura visual del componente con clases de Tailwind CSS
     return (
-        <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center p-4">
-            <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8">
-                <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-                    Organiza tu Vida
-                </h2>
+        <div className="min-h-screen bg-gray-900 flex flex-col justify-center items-center p-6">
+                <div className="max-w-md w-full bg-gray-800/70 backdrop-blur-sm rounded-xl shadow-soft p-8 border border-gray-700">
+                    <h2 className="text-3xl font-extrabold text-center text-primary-50 mb-4">
+                        Organiza tu Vida
+                    </h2>
+                    <p className="text-center text-sm text-primary-200 mb-6">Accede para sincronizar y organizar tu día</p>
                 
                 <form className="space-y-4">
                     <div>
@@ -113,11 +114,11 @@ const Auth = () => {
 
                     {error && <p className="text-red-500 text-sm text-center">{error}</p>}
 
-                    <div className="flex flex-col sm:flex-row gap-2 pt-2">
-                        <button onClick={handleLogin} className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors">
-                            Iniciar Sesión
+                    <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                        <button onClick={handleLogin} className="w-full bg-primary-500 text-white py-3 px-4 rounded-full hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-400 transition-colors">
+                            Ingresar
                         </button>
-                        <button onClick={handleRegister} className="w-full bg-gray-200 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 transition-colors">
+                        <button onClick={handleRegister} className="w-full bg-gray-700 text-primary-50 py-3 px-4 rounded-full hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors border border-gray-600">
                             Registrarse
                         </button>
                     </div>
@@ -126,19 +127,19 @@ const Auth = () => {
                 <div className="mt-6">
                     <div className="relative">
                         <div className="absolute inset-0 flex items-center">
-                            <div className="w-full border-t border-gray-300" />
+                            <div className="w-full border-t border-gray-700" />
                         </div>
                         <div className="relative flex justify-center text-sm">
-                            <span className="px-2 bg-white text-gray-500">O continúa con</span>
+                            <span className="px-3 bg-gray-800 text-primary-200">O continuar con</span>
                         </div>
                     </div>
                     <div className="mt-4">
-                        <button onClick={handleGoogleSignIn} className="w-full flex justify-center items-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                        <button onClick={handleGoogleSignIn} className="w-full flex justify-center items-center py-3 px-4 rounded-full bg-gray-700 border border-gray-600 text-primary-50 hover:bg-gray-600 transition-colors">
                             {/*  */}
-                            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 48 48">
+                            <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 48 48">
                                 <path d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/>
                             </svg>
-                            Google
+                            <span className="text-sm font-medium">Iniciar con Google</span>
                         </button>
                     </div>
                 </div>

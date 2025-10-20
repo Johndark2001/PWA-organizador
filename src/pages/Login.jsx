@@ -18,10 +18,10 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-      <div className="w-full max-w-md bg-white rounded-lg shadow p-6 text-center">
-        <h1 className="text-2xl font-bold mb-4 text-blue-600">Inicia sesión para continuar</h1>
-        <p className="text-sm text-gray-600 mb-4">Usa tu cuenta Google para probar el prototipo.</p>
+    <div className="min-h-screen flex items-center justify-center bg-gray-900 p-6">
+      <div className="w-full max-w-sm bg-gray-800/70 border border-gray-700 rounded-xl p-6 shadow-soft">
+        <h1 className="text-center text-2xl font-bold text-primary-50 mb-2">Ingresar</h1>
+        <p className="text-center text-sm text-primary-200 mb-6">Accede con Google para sincronizar tus tareas</p>
         <div className="flex justify-center">
           <GoogleLogin onSuccess={handleLoginSuccess} onError={() => alert("Error al iniciar sesión")} />
         </div>
