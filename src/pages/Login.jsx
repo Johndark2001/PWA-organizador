@@ -2,7 +2,7 @@
 import { useSession } from "../contexts/SessionContext";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase";
-import jwtDecode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 
 export default function LoginPage() {
   const { signIn } = useSession();
