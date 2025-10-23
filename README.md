@@ -7,6 +7,14 @@ Aplicación web progresiva (PWA) para organización de tareas, con característi
 Puedes descargar el código fuente desde:
 https://github.com/Johndark2001/PWA-organizador
 
+## ⬇️ Descarga directa (ZIP)
+
+Si quieres descargar el proyecto como un archivo ZIP (rama main), usa este enlace:
+
+https://github.com/Johndark2001/PWA-organizador/archive/refs/heads/main.zip
+
+Nota: si publicas releases, también puedes enlazar el ZIP de una versión específica desde la página de "Releases" en GitHub (botón "Source code (zip)").
+
 ## 📋 Requisitos Previos
 
 - Node.js (v16 o superior)
