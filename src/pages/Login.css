@@ -1,0 +1,162 @@
+/* src/pages/Login.css */
+
+/* Fondo animado con degradado azul */
+.login-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #3b82f6, #06b6d4, #2563eb, #0ea5e9);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+/* Capa de burbujas animadas */
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Cada burbuja */
+.bubble {
+  position: absolute;
+  bottom: -150px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: rise 15s infinite ease-in-out;
+}
+
+/* Diferentes tamaños y posiciones */
+.bubble:nth-child(1) {
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  animation-duration: 18s;
+}
+.bubble:nth-child(2) {
+  left: 25%;
+  width: 50px;
+  height: 50px;
+  animation-duration: 20s;
+  animation-delay: 4s;
+}
+.bubble:nth-child(3) {
+  left: 40%;
+  width: 100px;
+  height: 100px;
+  animation-duration: 22s;
+  animation-delay: 2s;
+}
+.bubble:nth-child(4) {
+  left: 65%;
+  width: 60px;
+  height: 60px;
+  animation-duration: 17s;
+  animation-delay: 6s;
+}
+.bubble:nth-child(5) {
+  left: 80%;
+  width: 90px;
+  height: 90px;
+  animation-duration: 25s;
+  animation-delay: 8s;
+}
+
+/* Tarjeta principal */
+.login-card {
+  position: relative;
+  z-index: 2; /* se mantiene sobre el fondo y las burbujas */
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  animation: slide-up 0.6s ease;
+}
+
+/* Avatar */
+.login-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -70px auto 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón de Google moderno */
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(34, 197, 94, 0.3);
+  transition: all 0.25s ease;
+}
+
+.google-btn:hover {
+  background: linear-gradient(90deg, #16a34a, #15803d);
+  transform: translateY(-2px);
+}
+
+/* Animaciones */
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
+}
