@@ -58,8 +58,29 @@ pip install -r requirements.txt
 
 1. Renombra `.env.example` a `.env`
 2. Completa las variables en el archivo `.env`:
-   - Credenciales de Firebase
+   - Credenciales de Firebase (desde tu consola de Firebase)
    - Configuración de correo (opcional)
+
+⚠️ IMPORTANTE: Seguridad de las Credenciales
+- NUNCA subas el archivo `.env` al repositorio
+- NUNCA compartas las credenciales en chats o correos
+- Rota las credenciales periódicamente
+- Usa credenciales diferentes para desarrollo y producción
+
+Variables requeridas en `.env`:
+```bash
+# Firebase (requerido)
+VITE_FIREBASE_API_KEY=tu_api_key
+VITE_FIREBASE_AUTH_DOMAIN=tu_proyecto.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=tu_proyecto
+VITE_FIREBASE_STORAGE_BUCKET=tu_proyecto.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=123456789
+VITE_FIREBASE_APP_ID=1:123456789:web:abc123
+
+# Correo (opcional)
+MAIL_PASSWORD=tu_contraseña_app
+MAIL_DEFAULT_SENDER=tu@email.com
+```
 
 ### 5. Iniciar la Aplicación
 
@@ -93,11 +114,43 @@ La aplicación estará disponible en:
 3. Haz clic en "Instalar aplicación"
 4. La app se instalará en tu dispositivo como una aplicación nativa
 
+## 🔒 Seguridad
+
+### Protección de Credenciales
+1. Usa `.env` para variables sensibles (nunca subir al repositorio)
+2. Mantén `.env.example` como plantilla (sin valores reales)
+3. Rota las credenciales periódicamente
+4. Usa diferentes credenciales para desarrollo y producción
+
+### Configuración de GitHub
+1. Habilita la autenticación de dos factores (2FA) en tu cuenta
+2. Configura la protección de la rama main:
+   - Ve a Settings > Branches
+   - Añade regla para 'main'
+   - Activa "Require pull request reviews"
+   - Desactiva "Allow force pushes"
+3. Habilita la detección de secretos:
+   - Settings > Security > Code security and analysis
+   - Activa "Secret scanning"
+
+### Pre-commit Hooks
+Usa pre-commit hooks para prevenir subir secretos:
+```bash
+# Instalar husky
+npm install husky --save-dev
+npm install detect-secrets --save-dev
+
+# Configurar hook
+npx husky add .husky/pre-commit "npx detect-secrets --scan"
+```
+
 ## 🤝 Contribuir
 
 1. Haz fork del proyecto
 2. Crea una rama para tu función: `git checkout -b feature/NuevaFuncion`
 3. Commit tus cambios: `git commit -am 'Añadir nueva función'`
+4. Asegúrate de no incluir credenciales o secretos
+5. Crea un pull request a la rama main
 4. Push a la rama: `git push origin feature/NuevaFuncion`
 5. Abre un Pull Request
 
