@@ -37,7 +37,11 @@ dist-ssr/
 .git-backup.zip
 
 # Entornos y secrets
+.env
+.env.local
+.env.*
 backend/.env
+backend/.env.*
 *.env
 
 # Bases de datos locales
