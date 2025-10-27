@@ -17,7 +17,7 @@ Nota: si publicas releases, también puedes enlazar el ZIP de una versión espec
 
 ## 📋 Requisitos Previos
 
-- Node.js (v16 o superior)
+- Node.js (LTS recomendado: v18 o v20)
 - Python (v3.8 o superior)
 - Git
 
@@ -39,6 +39,13 @@ npm install
 # Crear archivo .env con las credenciales de Firebase
 # (Usar .env.example como plantilla)
 copy .env.example .env
+```
+
+Nota: si estás usando Husky para hooks, ejecuta:
+
+```bash
+# Prepara los hooks (ejecuta el script `prepare` que agrega los hooks de Husky)
+npm run prepare
 ```
 
 ### 3. Configurar el Backend
@@ -69,17 +76,19 @@ pip install -r requirements.txt
 
 Variables requeridas en `.env`:
 ```bash
-# Firebase (requerido)
-VITE_FIREBASE_API_KEY=tu_api_key
-VITE_FIREBASE_AUTH_DOMAIN=tu_proyecto.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=tu_proyecto
-VITE_FIREBASE_STORAGE_BUCKET=tu_proyecto.appspot.com
-VITE_FIREBASE_MESSAGING_SENDER_ID=123456789
-VITE_FIREBASE_APP_ID=1:123456789:web:abc123
+# Firebase (requerido) - usa estos nombres de variables; sustituye los valores en tu `.env` local
+# Ejemplo (valores reemplazados por <REDACTED> para evitar exponer secrets en el README)
+VITE_FIREBASE_API_KEY=<REDACTED_FIREBASE_API_KEY>
+VITE_FIREBASE_AUTH_DOMAIN=<REDACTED_FIREBASE_AUTH_DOMAIN>
+VITE_FIREBASE_PROJECT_ID=<REDACTED_FIREBASE_PROJECT_ID>
+VITE_FIREBASE_STORAGE_BUCKET=<REDACTED_FIREBASE_STORAGE_BUCKET>
+VITE_FIREBASE_MESSAGING_SENDER_ID=<REDACTED_FIREBASE_MESSAGING_SENDER_ID>
+VITE_FIREBASE_APP_ID=<REDACTED_FIREBASE_APP_ID>
 
-# Correo (opcional)
-MAIL_PASSWORD=tu_contraseña_app
-MAIL_DEFAULT_SENDER=tu@email.com
+# Correo (opcional) - sustituye por tus credenciales locales
+MAIL_PASSWORD=<REDACTED_MAIL_PASSWORD>
+MAIL_USERNAME=<REDACTED_MAIL_USERNAME>
+MAIL_DEFAULT_SENDER=<REDACTED_MAIL_DEFAULT_SENDER>
 ```
 
 ### 5. Iniciar la Aplicación
@@ -143,6 +152,10 @@ npm install detect-secrets --save-dev
 # Configurar hook
 npx husky add .husky/pre-commit "npx detect-secrets --scan"
 ```
+
+Nota: tras instalar dependencias ejecuta `npm run prepare` para que Husky instale los hooks localmente.
+
+Recomendación: usa la versión LTS de Node (v18 o v20) para evitar incompatibilidades con dependencias.
 
 ## 🤝 Contribuir
 
